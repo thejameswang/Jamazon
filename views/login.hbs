@@ -1,0 +1,18 @@
+<h2>Log In</h2>
+
+<a href='/users/signup/' style='float:right;'>Sign Up</a>
+
+<form method='post' class='form well'>
+  <input type='text' class='form-group' name='username' placeholder='Username'><br>
+  <input type='password' class='form-group' name='password' placeholder='Password'><br>
+  <button type='submit' class='btn btn-warning form-group'>Log In</button>
+</form>
+
+{{#if error}}
+<h4>Error:</h4>
+<ul>
+  <li>
+    {{error}}
+  </li>
+</ul>
+{{/if}}

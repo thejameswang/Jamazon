@@ -1,0 +1,38 @@
+<h1>Your Cart</h1>
+
+<a href='/users/logout/' style='float:right;'>Log Out</a>
+<a href='/' style='float:left;'>View all Prodcuts</a>
+<br>
+<table style='width: 100%'>
+  {{#each products}}
+  <tr>
+    <td>
+      <a href='/product/{{this._id}}'>
+      <img src='{{this.imageUrl}}' style='max-width:150px;'>
+      </a>
+    </td> &emsp;
+    <td>
+      <ul>
+        <li style="font-size:20px">{{this.title}}</li>
+        <li style="font-size:14px">{{this.description}}</li>
+        <li><a href='/cart/delete/{{this._id}}'>Remove from Cart</a></li>
+      </ul>
+    </td>
+  </tr>
+  {{/each}}
+</table>
+<br>
+<form action="/checkout" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key='pk_test_IwXtWsF97aMuNHzyaxec4HZQ'
+    data-amount="999"
+    data-name="Demo Site"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto">
+  </script>
+</form>
+<br>
+<a href='/cart/delete/'>Clear Cart</a>

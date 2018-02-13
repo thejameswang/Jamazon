@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+
+<a href='/users/logout/' style='float:right;'>Log Out</a>
+
+<table style='width: 100%'>
+  {{#each products}}
+  <tr>
+    <td>
+      <a href='/product/{{this._id}}'>
+      <img src='{{this.imageUrl}}' style='max-width:150px;'>
+      </a>
+    </td> &emsp;
+    <td>
+      <ul>
+        <li style="font-size:20px">{{this.title}}</li>
+        <li style="font-size:14px">{{this.description}}</li>
+      </ul>
+    </td>
+  </tr>
+  {{/each}}
+</table>
+<br>
+<a href='/cart/'>View your Cart</a>

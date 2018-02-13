@@ -1,0 +1,15 @@
+<h1>{{product.title}}</h1>
+
+<a href='/users/logout/' style='float:right;'>Log Out</a>
+<a href='/' style='float:left;'>View all Products</a>
+<br>
+<img src='{{product.imageUrl}}' style='max-width:400px;'> &emsp;
+<br>
+<li style="font-size:14px">{{product.description}}</li>
+<br>
+
+<form method='post'>
+  <button type='submit'>Add to Cart</button>
+</form>
+<br>
+<a href='/cart/'>View your Cart</a>
